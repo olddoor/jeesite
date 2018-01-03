@@ -11,11 +11,11 @@
 <body>
 	<div class="row">
 	   <div class="span2">
-	   	 <h4>栏目列表</h4>
+	   	 <h4>栏目列表11111</h4>
 		 <ol>
 		 	<cms:frontCategoryList categoryList="${categoryList}"/>
 		 </ol>
-		 <h4>推荐阅读</h4>
+		 <h4>推荐阅读2222</h4>
 		 <ol>
 		 	<cms:frontArticleHitsTop category="${category}"/>
 		 </ol>
@@ -25,6 +25,7 @@
 		    <cms:frontCurrentPosition category="${category}"/>
 		 </ul>
 	   </div>
+	   span10
 	   <div class="span10">
 	      <c:set var="index" value="1"/>
 		  <c:forEach items="${categoryList}" var="tpl">
@@ -46,6 +47,7 @@
 		    	</div>
 		    	${index % 2 ne 0 ? '</div>':''}
 			</c:if>
+			阅读2阅读2阅读2阅读2阅读2阅读2
 		  </c:forEach>
 	   </div>
 	</div>

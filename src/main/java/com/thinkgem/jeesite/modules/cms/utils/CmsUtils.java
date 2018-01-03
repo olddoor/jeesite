@@ -169,7 +169,7 @@ public class CmsUtils {
 		}
 		article.setDelFlag(Article.DEL_FLAG_NORMAL);
 		page = articleService.find(page, article, false);
-		return page.getList();
+		return page.getList();//获取文章
 	}
 	
 	/**
@@ -216,7 +216,7 @@ public class CmsUtils {
 	}
 
     /**
-     * 获得文章动态URL地址
+     * 获得文章动态URL地址 如/view-CategoryID-articleID-html
    	 * @param article
    	 * @return url
    	 */

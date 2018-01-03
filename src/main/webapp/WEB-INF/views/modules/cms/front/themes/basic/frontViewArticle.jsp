@@ -26,11 +26,11 @@
 <body>
 	<div class="row">
 	   <div class="span2">
-	   	 <h4>栏目列表</h4>
+	   	 <h4>栏目列表111</h4>
 		 <ol>
 		 	<cms:frontCategoryList categoryList="${categoryList}"/>
 		 </ol>
-		 <h4>推荐阅读</h4>
+		 <h4>推荐阅读222777777777777777</h4>
 		 <ol>
 		 	<cms:frontArticleHitsTop category="${category}"/>
 		 </ol>

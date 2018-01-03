@@ -46,10 +46,11 @@
 			<tr>
 				<td><a href="javascript:" onclick="$('#categoryId').val('${article.category.id}');$('#categoryName').val('${article.category.name}');$('#searchForm').submit();return false;">${article.category.name}</a></td>
 				<td><a href="${ctx}/cms/article/form?id=${article.id}" title="${article.title}">${fns:abbr(article.title,40)}</a></td>
-				<td>${article.weight}</td>
-				<td>${article.hits}</td>
+				<td>${article.weight}</td><!-- 权重 -->
+				<td>${article.hits}</td><!-- 点击数 -->
 				<td>${article.createBy.name}</td>
 				<td><fmt:formatDate value="${article.updateDate}" type="both"/></td>
+				<!-- 操作 -->
 				<td>
 					<a href="${pageContext.request.contextPath}${fns:getFrontPath()}/view-${article.category.id}-${article.id}${fns:getUrlSuffix()}" target="_blank">访问</a>
 					<shiro:hasPermission name="cms:article:edit">

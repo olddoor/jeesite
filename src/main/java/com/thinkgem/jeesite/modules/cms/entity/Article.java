@@ -51,7 +51,6 @@ import com.thinkgem.jeesite.common.persistence.IdEntity;
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Indexed @Analyzer(impl = IKAnalyzer.class)
 public class Article extends IdEntity<Article> {
-
     public static final String DEFAULT_TEMPLATE = "frontViewArticle";
 	
 	private static final long serialVersionUID = 1L;
@@ -240,7 +239,9 @@ public class Article extends IdEntity<Article> {
 	public void setPosidList(List<Long> list) {
 		posid = ","+StringUtils.join(list, ",")+",";
 	}
-
+	/**
+	 * 动态拼凑一个url地址
+	 */
     @Transient
    	public String getUrl() {
         return CmsUtils.getUrlDynamic(this);

@@ -104,9 +104,12 @@ public class ArticleService extends BaseService {
 		}
 		return articleDao.find(page, dc);
 	}
-
+/**
+ * 保存文章
+ */
 	@Transactional(readOnly = false)
 	public void save(Article article) {
+		//保存文章的内容在关联表ArticleData的Content中
 		if (article.getArticleData().getContent()!=null){
 			article.getArticleData().setContent(StringEscapeUtils.unescapeHtml4(
 					article.getArticleData().getContent()));
