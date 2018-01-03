@@ -4,11 +4,12 @@
 <!DOCTYPE html>
 <html style="overflow-x:hidden;overflow-y:auto;">
 	<head>
-		<title><sitemesh:title/> - Powered By JeeSite</title>
+		<title><sitemesh:title/>layouts/default.jsp  ==================</title>
 		<%@include file="/WEB-INF/views/include/head.jsp" %>
 		<sitemesh:head/>
 	</head>
 	<body>
+	    默认的装饰页面
 		<sitemesh:body/>
 	</body>
 </html>
