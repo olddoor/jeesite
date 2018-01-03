@@ -67,15 +67,15 @@
 
 	<!-- 视图文件解析配置 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="${web.view.prefix}"/>
-		<property name="suffix" value="${web.view.suffix}"/>
+		<property name="prefix" value="${web.view.prefix}"/><!-- /WEB-INF/views/ -->
+		<property name="suffix" value="${web.view.suffix}"/><!-- .jsp -->
 	</bean>
 	
 	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
 	<mvc:default-servlet-handler/>
 	
 	<!-- 定义无Controller的path<->view直接映射 -->
-	<mvc:view-controller path="/" view-name="redirect:${web.view.index}"/>
+	<mvc:view-controller path="/" view-name="redirect:${web.view.index}"/><!-- /a -->
 
 	<!-- 拦截器配置 -->
 	<mvc:interceptors>

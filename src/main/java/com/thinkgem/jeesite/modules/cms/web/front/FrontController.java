@@ -63,10 +63,10 @@ public class FrontController extends BaseController{
 	 */
 	@RequestMapping
 	public String index(Model model) {
-		Site site = CmsUtils.getSite(Site.defaultSiteId());
+		Site site = CmsUtils.getSite(Site.defaultSiteId());//从缓存中获取site对象实例
 		model.addAttribute("site", site);
 		model.addAttribute("isIndex", true);
-		return "modules/cms/front/themes/"+site.getTheme()+"/frontIndex";
+		return "modules/cms/front/themes/"+site.getTheme()+"/frontIndex"; //basic
 	}
 	
 	/**
@@ -101,7 +101,7 @@ public class FrontController extends BaseController{
 			model.addAttribute("site", site);
 			return "error/404";
 		}
-		model.addAttribute("site", category.getSite());
+		model.addAttribute("site", category.getSite());//?
 		// 2：简介类栏目，栏目第一条内容
 		if("2".equals(category.getShowModes()) && "article".equals(category.getModule())){
 			// 如果没有子栏目，并父节点为跟节点的，栏目列表为当前栏目。
@@ -169,7 +169,7 @@ public class FrontController extends BaseController{
 					view = "/"+category.getCustomListView();
 				}
                 setTplModelAttribute(model, category);
-				return "modules/cms/front/themes/"+category.getSite().getTheme()+view;
+				return "modules/cms/front/themes/"+category.getSite().getTheme()+view;// basic/frontList;
 			}
 			// 有子栏目：显示子栏目列表
 			else{
@@ -180,7 +180,7 @@ public class FrontController extends BaseController{
 					view = "/"+category.getCustomListView();
 				}
                 setTplModelAttribute(model, category);
-				return "modules/cms/front/themes/"+category.getSite().getTheme()+view;
+				return "modules/cms/front/themes/"+category.getSite().getTheme()+view;// basic/frontListCategory
 			}
 		}
 	}
@@ -217,7 +217,7 @@ public class FrontController extends BaseController{
 			return "error/404";
 		}
 		model.addAttribute("site", category.getSite());
-		if ("article".equals(category.getModule())){
+		if ("article".equals(category.getModule())){ //栏目类型为文章类型
 			// 如果没有子栏目，并父节点为跟节点的，栏目列表为当前栏目。
 			List<Category> categoryList = Lists.newArrayList();
 			if (category.getParent().getId().equals("1")){
@@ -241,7 +241,7 @@ public class FrontController extends BaseController{
 			model.addAttribute("relationList", relationList); 
             setTplModelAttribute(model, article.getCategory());
             setTplModelAttribute(model, article.getViewConfig());
-			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/"+getTpl(article);
+			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/"+getTpl(article);//frontViewArticle
 		}
 		return "error/404";
 	}
